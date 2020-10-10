@@ -1,6 +1,7 @@
 import bs4
 import urllib.request
 import smtplib
+import time
 
 prices_list = []
 
@@ -42,4 +43,5 @@ while True:
             message = f"The price has decreased ${decrease} down to ${prices_list[-1]}."
             send_email(message)
     count += 1
+    time.sleep(60 * 60 * 6)
 
